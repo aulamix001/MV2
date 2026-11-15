@@ -1,0 +1,120 @@
+-- Selecting Windows SDK version 10.0.26100.0 to target Windows 10.0.20348.
+-- The C compiler identification is MSVC 19.44.35230.0
+-- The CXX compiler identification is MSVC 19.44.35230.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring juceaide
+-- Building juceaide
+-- Exporting juceaide
+-- Testing juceaide
+-- Finished setting up juceaide
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - not found
+-- Found Threads: TRUE
+-- Configuring done (81.8s)
+-- Generating done (0.2s)
+-- Build files have been written to: D:/a/MV2/MV2/build-windows-msvc-x64
+MSBuild version 17.14.60+43b635718 for .NET Framework
+
+  Checking File Globs
+  1>Checking Build System
+  Generating MV2Recreation_artefacts/JuceLibraryCode/MV2Recreation_resources.rc
+  Building Custom Rule D:/a/MV2/MV2/CMakeLists.txt
+  MV2Recreation_rc_lib.vcxproj -> D:\a\MV2\MV2\build-windows-msvc-x64\MV2Recreation_rc_lib.dir\Release\MV2Recreation_rc_lib.lib
+  Generating juce_binarydata_MV2Assets/JuceLibraryCode/BinaryData1.cpp, juce_binarydata_MV2Assets/JuceLibraryCode/BinaryData.h
+  Building Custom Rule D:/a/MV2/MV2/CMakeLists.txt
+  juce_VST3ManifestHelper.cpp
+  Building Custom Rule D:/a/MV2/MV2/CMakeLists.txt
+  BinaryData1.cpp
+  MV2Assets.vcxproj -> D:\a\MV2\MV2\build-windows-msvc-x64\Release\MV2Assets.lib
+  Generating MV2Recreation_artefacts/JuceLibraryCode/JuceHeader.h
+  Building Custom Rule D:/a/MV2/MV2/CMakeLists.txt
+  PluginProcessor.cpp
+  PluginEditor.cpp
+  juce_audio_processors.cpp
+  juce_audio_processors_ara.cpp
+  juce_audio_processors_lv2_libs.cpp
+  juce_gui_extra.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\memory(3630,56): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data [D:\a\MV2\MV2\build-windows-msvc-x64\MV2Recreation.vcxproj]
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\memory(3630,56): warning C4244:         with [D:\a\MV2\MV2\build-windows-msvc-x64\MV2Recreation.vcxproj]
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\memory(3630,56): warning C4244:         [ [D:\a\MV2\MV2\build-windows-msvc-x64\MV2Recreation.vcxproj]
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\memory(3630,56): warning C4244:             _Ty=int [D:\a\MV2\MV2\build-windows-msvc-x64\MV2Recreation.vcxproj]
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\memory(3630,56): warning C4244:         ] [D:\a\MV2\MV2\build-windows-msvc-x64\MV2Recreation.vcxproj]
+  (compiling source file '../Source/PluginProcessor.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\memory(3630,56):
+      the template instantiation context (the oldest one first) is
+          D:\a\MV2\MV2\Source\PluginProcessor.cpp(7,12):
+          see reference to function template instantiation 'std::unique_ptr<juce::AudioParameterFloat,std::default_delete<juce::AudioParameterFloat>> std::make_unique<juce::AudioParameterFloat,juce::ParameterID,const char(&)[10],juce::NormalisableRange<float>,int,const char(&)[3],0>(juce::ParameterID &&,const char (&)[10],juce::NormalisableRange<float> &&,int &&,const char (&)[3])' being compiled
+  
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\memory(3630,35): warning C4996: 'juce::AudioParameterFloat::AudioParameterFloat': Prefer the signature taking an Attributes argument [D:\a\MV2\MV2\build-windows-msvc-x64\MV2Recreation.vcxproj]
+  (compiling source file '../Source/PluginProcessor.cpp')
+  
+  juce_gui_basics.cpp
+  juce_graphics.cpp
+  juce_graphics_Harfbuzz.cpp
+D:\a\MV2\MV2\build-windows-msvc-x64\_deps\juce-src\modules\juce_gui_basics\juce_gui_basics.cpp(61): warning : This version of JUCE does not use the splash screen, the flag JUCE_DISPLAY_SPLASH_SCREEN is ignored [D:\a\MV2\MV2\build-windows-msvc-x64\MV2Recreation.vcxproj]
+  juce_vst3_helper.vcxproj -> D:\a\MV2\MV2\build-windows-msvc-x64\Release\juce_vst3_helper.exe
+  juce_events.cpp
+  juce_core.cpp
+  juce_core_CompilationTime.cpp
+  juce_data_structures.cpp
+  juce_audio_basics.cpp
+  juce_audio_utils.cpp
+  juce_audio_formats.cpp
+  juce_audio_devices.cpp
+  juce_dsp.cpp
+  juce_graphics_Sheenbidi.c
+  MV2Recreation.vcxproj -> D:\a\MV2\MV2\build-windows-msvc-x64\MV2Recreation_artefacts\Release\MV2 Recreation_SharedCode.lib
+  Building Custom Rule D:/a/MV2/MV2/CMakeLists.txt
+  juce_audio_plugin_client_AAX.cpp
+  juce_audio_plugin_client_AAX_utils.cpp
+  juce_audio_plugin_client_ARA.cpp
+  juce_audio_plugin_client_LV2.cpp
+  juce_audio_plugin_client_Standalone.cpp
+  juce_audio_plugin_client_Unity.cpp
+  juce_audio_plugin_client_VST2.cpp
+  juce_audio_plugin_client_VST3.cpp
+     Creating library D:/a/MV2/MV2/build-windows-msvc-x64/MV2Recreation_artefacts/Release/VST3/MV2 Recreation.lib and object D:/a/MV2/MV2/build-windows-msvc-x64/MV2Recreation_artefacts/Release/VST3/MV2 Recreation.exp
+  MV2Recreation_VST3.vcxproj -> D:\a\MV2\MV2\build-windows-msvc-x64\MV2Recreation_artefacts\Release\VST3\MV2 Recreation.vst3\Contents\x86_64-win\MV2 Recreation.vst3
+  removing moduleinfo.json
+  creating D:/a/MV2/MV2/build-windows-msvc-x64/MV2Recreation_artefacts/Release/VST3/MV2 Recreation.vst3/Contents/Resources/moduleinfo.json
+  Building Custom Rule D:/a/MV2/MV2/CMakeLists.txt
+  Building Custom Rule D:/a/MV2/MV2/CMakeLists.txt
+  DynamicsTests.cpp
+  juce_audio_plugin_client_AAX.cpp
+  juce_audio_plugin_client_AAX_utils.cpp
+  Building Custom Rule D:/a/MV2/MV2/CMakeLists.txt
+  juce_audio_plugin_client_ARA.cpp
+  juce_audio_plugin_client_LV2.cpp
+  juce_audio_plugin_client_Standalone.cpp
+  juce_audio_plugin_client_Unity.cpp
+  juce_audio_plugin_client_VST2.cpp
+  juce_audio_plugin_client_VST3.cpp
+  ProcessorTests.cpp
+  dsp_tests.vcxproj -> D:\a\MV2\MV2\build-windows-msvc-x64\Release\dsp_tests.exe
+  processor_tests.vcxproj -> D:\a\MV2\MV2\build-windows-msvc-x64\Release\processor_tests.exe
+  MV2Recreation_Standalone.vcxproj -> D:\a\MV2\MV2\build-windows-msvc-x64\MV2Recreation_artefacts\Release\Standalone\MV2 Recreation.exe
+  Building Custom Rule D:/a/MV2/MV2/CMakeLists.txt
+Internal ctest changing into directory: D:/a/MV2/MV2/build-windows-msvc-x64
+Test project D:/a/MV2/MV2/build-windows-msvc-x64
+    Start 1: dynamics
+1/2 Test #1: dynamics .........................   Passed    0.06 sec
+    Start 2: processor
+2/2 Test #2: processor ........................   Passed    0.80 sec
+
+100% tests passed, 0 tests failed out of 2
+
+Total Test time (real) =   0.91 sec
+Created: dist/MV2-Recreation-Windows-x64.zip

@@ -1,0 +1,35 @@
+Start testing: Nov 15 03:28 Coordinated Universal Time
+----------------------------------------------------------
+1/2 Testing: dynamics
+1/2 Test: dynamics
+Command: "D:/a/MV2/MV2/build-windows-msvc-x64/Release/dsp_tests.exe"
+Directory: D:/a/MV2/MV2/build-windows-msvc-x64
+"dynamics" start time: Nov 15 03:28 Coordinated Universal Time
+Output:
+----------------------------------------------------------
+PASS: 10 DSP checks at 44.1, 48 and 96 kHz (30 scenarios), plus printed scale alignment/monotonicity
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"dynamics" end time: Nov 15 03:28 Coordinated Universal Time
+"dynamics" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/2 Testing: processor
+2/2 Test: processor
+Command: "D:/a/MV2/MV2/build-windows-msvc-x64/Release/processor_tests.exe"
+Directory: D:/a/MV2/MV2/build-windows-msvc-x64
+"processor" start time: Nov 15 03:28 Coordinated Universal Time
+Output:
+----------------------------------------------------------
+PASS: processor state, stereo/mono audio, transient metering, applied gain, 3 faders at 3 sizes, normal/fine drag, wheel, keyboard, balanced host gestures, numeric edits and editor rendering
+<end of output>
+Test time =   0.80 sec
+----------------------------------------------------------
+Test Passed.
+"processor" end time: Nov 15 03:28 Coordinated Universal Time
+"processor" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 15 03:28 Coordinated Universal Time
