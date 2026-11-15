@@ -1,0 +1,7 @@
+/build/
+/.deps/
+*.user
+/build-dsp/
+/dist/
+
+/build-windows*/

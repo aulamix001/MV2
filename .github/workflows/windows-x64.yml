@@ -1,0 +1,53 @@
+name: Windows x64 VST3
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: windows-x64-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: windows-2022
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build, test and package Windows x64
+        id: compile
+        timeout-minutes: 27
+        shell: pwsh
+        run: ./scripts/build-windows-x64.ps1 *>&1 | Tee-Object -FilePath windows-build.log
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MV2-Recreation-Windows-x64
+          path: dist/MV2-Recreation-Windows-x64.zip
+          if-no-files-found: error
+      - name: Save build result in the repository
+        if: always()
+        shell: pwsh
+        env:
+          BUILD_BRANCH: builds/windows-x64-${{ github.run_id }}-${{ github.run_attempt }}
+        run: |
+          New-Item -ItemType Directory -Force dist | Out-Null
+          $report = [ordered]@{
+            source_commit = '${{ github.sha }}'
+            build_outcome = '${{ steps.compile.outcome }}'
+            run_url = '${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}'
+            package = (Test-Path 'dist/MV2-Recreation-Windows-x64.zip')
+          }
+          $report | ConvertTo-Json | Set-Content -Encoding utf8 dist/windows-x64-build.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git switch -c $env:BUILD_BRANCH
+          if ($LASTEXITCODE -ne 0) { throw 'Cannot create build branch.' }
+          git add -f dist/windows-x64-build.json
+          if (Test-Path windows-build.log) { git add -f windows-build.log }
+          if (Test-Path build-windows-msvc-x64/Testing/Temporary/LastTest.log) { Copy-Item build-windows-msvc-x64/Testing/Temporary/LastTest.log dist/windows-tests.log; git add -f dist/windows-tests.log }
+          if ($report.package) { git add -f dist/MV2-Recreation-Windows-x64.zip }
+          if ($LASTEXITCODE -ne 0) { throw 'Cannot stage verified Windows package.' }
+          git commit -m 'Save Windows x64 build result and available package'
+          if ($LASTEXITCODE -ne 0) { throw 'Cannot commit Windows package.' }
+          git push origin "HEAD:refs/heads/$env:BUILD_BRANCH"
+          if ($LASTEXITCODE -ne 0) { throw 'Cannot publish Windows package branch.' }
