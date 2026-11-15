@@ -36,12 +36,14 @@ MV2Editor::MV2Editor(MV2Processor& p) : AudioProcessorEditor(p), processor(p)
     sizeButton.setTooltip("Tamanho da interface");
     sizeButton.setColour(juce::TextButton::buttonColourId,juce::Colour(0xff39392e));
     sizeButton.setColour(juce::TextButton::textColourOffId,juce::Colour(0xffe0d7b0));
-    sizeButton.onClick=[this] {
+    const auto safeEditor=juce::Component::SafePointer<MV2Editor>(this);
+    sizeButton.onClick=[safeEditor] {
+        if(safeEditor==nullptr)return;
         juce::PopupMenu menu;
         for(auto percent : {100,150,200,250,300,400}) menu.addItem(percent,juce::String(percent)+"%");
-        menu.showMenuAsync(juce::PopupMenu::Options().withTargetComponent(sizeButton),
-            [safe=juce::Component::SafePointer<MV2Editor>(this)](int percent) {
-                if(safe!=nullptr && percent>0) safe->setSize(318*percent/100,307*percent/100);
+        menu.showMenuAsync(juce::PopupMenu::Options().withTargetComponent(safeEditor->sizeButton),
+            [safeEditor](int percent) {
+                if(safeEditor!=nullptr && percent>0) safeEditor->setSize(318*percent/100,307*percent/100);
             });
     };
     addAndMakeVisible(sizeButton);
